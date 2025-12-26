@@ -1,0 +1,153 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>玩家详情</h1>
+    
+    <div style="margin-bottom: 2rem;">
+        <h2>基本信息</h2>
+        <table>
+            <tr>
+                <td style="font-weight: bold; width: 150px;">ID:</td>
+                <td>{{ player.id }}</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">昵称:</td>
+                <td>{{ player.nickname }}</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">境界:</td>
+                <td>{{ player.realm }}</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">等级:</td>
+                <td>{{ player.level }}</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">经验:</td>
+                <td>{{ player.exp }}</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">金币:</td>
+                <td>{{ player.coins }}</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">灵根:</td>
+                <td>{{ player.spirit_root }}</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">生命值:</td>
+                <td>{{ player.hp }}/{{ player.max_hp }}</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">法力值:</td>
+                <td>{{ player.mp }}/{{ player.max_mp }}</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">攻击力:</td>
+                <td>{{ player.attack }}</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">防御力:</td>
+                <td>{{ player.defense }}</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">创建时间:</td>
+                <td>{{ player.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">最后登录:</td>
+                <td>{{ player.last_login.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div style="margin-bottom: 2rem;">
+        <h2>背包物品</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>物品名称</th>
+                    <th>数量</th>
+                    <th>品质</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in player.backpack %}  <!-- 假设player有backpack属性 -->
+                    <tr>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.quality }}</td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="3" style="text-align: center;">背包为空</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    <div style="margin-bottom: 2rem;">
+        <h2>装备</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>装备名称</th>
+                    <th>部位</th>
+                    <th>品质</th>
+                    <th>攻击力</th>
+                    <th>防御力</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for equip in player.equipments %}  <!-- 假设player有equipments属性 -->
+                    <tr>
+                        <td>{{ equip.name }}</td>
+                        <td>{{ equip.slot }}</td>
+                        <td>{{ equip.quality }}</td>
+                        <td>{{ equip.attack }}</td>
+                        <td>{{ equip.defense }}</td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5" style="text-align: center;">暂无装备</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    <div style="margin-bottom: 2rem;">
+        <h2>功法</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>功法名称</th>
+                    <th>等级</th>
+                    <th>类型</th>
+                    <th>攻击力加成</th>
+                    <th>防御力加成</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for gongfa in player.gongfas %}  <!-- 假设player有gongfas属性 -->
+                    <tr>
+                        <td>{{ gongfa.name }}</td>
+                        <td>{{ gongfa.level }}</td>
+                        <td>{{ gongfa.type }}</td>
+                        <td>{{ gongfa.attack_bonus }}</td>
+                        <td>{{ gongfa.defense_bonus }}</td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5" style="text-align: center;">暂无功法</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    <div>
+        <a href="{{ url_for('admin_bp.manage_players') }}" class="btn btn-primary">返回列表</a>
+    </div>
+{% endblock %}

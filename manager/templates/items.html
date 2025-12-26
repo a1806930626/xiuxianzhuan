@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>物品管理</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>名称</th>
+                <th>类型</th>
+                <th>品质</th>
+                <th>效果</th>
+                <th>价格</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.type }}</td>
+                    <td>{{ item.quality }}</td>
+                    <td>{{ item.effect }}</td>
+                    <td>{{ item.price }}</td>
+                    <td>
+                        <!-- 这里可以添加编辑、删除等操作按钮 -->
+                        <a href="#" class="btn btn-primary">编辑</a>
+                        <button class="btn btn-danger">删除</button>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7" style="text-align: center;">暂无物品数据</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
