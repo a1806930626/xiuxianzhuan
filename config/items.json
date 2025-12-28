@@ -1,0 +1,83 @@
+{
+  "hp_potion": {
+    "name": "气血丹",
+    "description": "恢复50点生命值",
+    "type": "consumable",
+    "price": 50,
+    "effects": {
+      "hp": 50
+    }
+  },
+  "spirit_potion": {
+    "name": "灵力丹",
+    "description": "恢复20点灵力",
+    "type": "consumable",
+    "price": 80,
+    "effects": {
+      "spirit": 20
+    }
+  },
+  "iron_sword": {
+    "name": "铁剑",
+    "description": "普通的铁剑，增加10点攻击力",
+    "type": "equipment",
+    "price": 200,
+    "quality": "黄",
+    "effects": {
+      "attack": 10
+    }
+  },
+  "leather_armor": {
+    "name": "皮甲",
+    "description": "普通的皮甲，增加5点防御力",
+    "type": "equipment",
+    "price": 150,
+    "quality": "黄",
+    "effects": {
+      "defense": 5
+    }
+  },
+  "changchun_gong_book": {
+    "name": "长春功秘籍",
+    "description": "修炼长春功的功法秘籍",
+    "type": "gongfa_book",
+    "price": 500,
+    "required_realm": "练气一层"
+  },
+  "taiyi_jin_gang": {
+    "name": "太乙金刚功",
+    "description": "高级防御功法",
+    "type": "gongfa",
+    "attack_bonus": 5,
+    "hp_bonus": 200,
+    "defense_bonus": 15,
+    "speed_bonus": 2,
+    "cultivation_speed_bonus": 0.1,
+    "required_realm": "练气六层"
+  },
+  "taiyi_jin_gang_book": {
+    "name": "太乙金刚功秘籍",
+    "description": "修炼太乙金刚功的功法秘籍",
+    "type": "gongfa_book",
+    "price": 1000,
+    "required_realm": "练气六层"
+  },
+  "jiuyang_shengong": {
+    "name": "九阳神功",
+    "description": "传说中的至高功法",
+    "type": "gongfa",
+    "attack_bonus": 15,
+    "hp_bonus": 500,
+    "defense_bonus": 25,
+    "speed_bonus": 5,
+    "cultivation_speed_bonus": 0.2,
+    "required_realm": "筑基初期"
+  },
+  "jiuyang_shengong_book": {
+    "name": "九阳神功秘籍",
+    "description": "传说中的至高功法秘籍",
+    "type": "gongfa_book",
+    "price": 5000,
+    "required_realm": "筑基初期"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "demon_lord": {
+    "name": "魔王",
+    "max_hp_base": 450,
+    "attack_base": 45,
+    "defense_base": 18,
+    "speed_base": 14,
+    "spirit_stone": 500,
+    "drop_items": [
+      {
+        "item_id": "iron_sword",
+        "probability": 1.0
+      }
+    ]
+  }
+}

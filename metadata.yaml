@@ -1,0 +1,5 @@
+name: astrbot_plugin_xiuxianzhuan # 这是你的插件的唯一识别名。
+desc: 基于astrbot框架的文字修仙游戏 # 插件简短描述
+version: v1.0.0 # 插件版本号。格式：v1.1.1 或者 v1.1
+author: Sugar fishing # 作者
+repo: https://github.com/a1806930626/xiuxianzhuan # 插件的仓库地址

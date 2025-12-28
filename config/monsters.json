@@ -1,0 +1,30 @@
+{
+  "goblin": {
+    "name": "小妖精",
+    "max_hp_base": 25,
+    "attack_base": 5,
+    "defense_base": 2,
+    "speed_base": 3,
+    "spirit_stone": 10,
+    "drop_items": [
+      {
+        "item_id": "hp_potion",
+        "probability": 0.3
+      }
+    ]
+  },
+  "wolf": {
+    "name": "野狼",
+    "max_hp_base": 40,
+    "attack_base": 8,
+    "defense_base": 3,
+    "speed_base": 6,
+    "spirit_stone": 20,
+    "drop_items": [
+      {
+        "item_id": "hp_potion",
+        "probability": 0.5
+      }
+    ]
+  }
+}
